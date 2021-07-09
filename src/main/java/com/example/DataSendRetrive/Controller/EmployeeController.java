@@ -5,10 +5,9 @@ import com.example.DataSendRetrive.model.Employee;
 import com.example.DataSendRetrive.service.EmployeeService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/employees")
@@ -27,6 +26,16 @@ public class EmployeeController {
 
     }
 
-    // BUILD all employees REST API!
+    // BUILD get all employees REST API!
+
+    @GetMapping
+    public List<Employee> getAllEmployees(){
+        return employeeService.getAllEmployees();
+
+    }
+
+
+
+
 
 }
